@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Last screenshots:</h1>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Token</th>
+            <th>URL</th>
+            <th>View</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for screenshot in screenshots_list %}
+        <tr>
+            <td>{{ screenshot.token }}</td>
+            <td>{{ screenshot.url }}</td>
+            <td><a href="http://127.0.0.1:8080/?screenshot_id={{ screenshot.id }}">{{ screenshot.picture_name }}</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
